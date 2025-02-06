@@ -1,0 +1,40 @@
+﻿@model Product
+
+<div class="container mt-4">
+    <h2 class="text-center text-secondary fw-bold">Product Details</h2>
+
+    <table class="table table-bordered table-light shadow-sm rounded border-secondary">
+        <tbody class="fw-semibold">
+            <tr>
+                <th class="bg-light text-secondary">Product ID</th>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <th class="bg-light text-secondary">Name</th>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <th class="bg-light text-secondary">Price</th>
+                <td class="text-success fw-bold">$@Model.Price</td>
+            </tr>
+            <tr>
+                <th class="bg-light text-secondary">Description</th>
+                <td>@Model.Description</td>
+            </tr>
+            <tr>
+                <th class="bg-light text-secondary">Image</th>
+                <td>
+                    <img src="~/Images/@Model.Image" alt="@Model.Name"
+                         class="rounded border border-secondary"
+                         style="width: 160px; height: 160px; object-fit: cover;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="text-center mt-3">
+        <a href="/Product/Index" class="btn btn-secondary btn-lg">
+            <i class="bi bi-arrow-left"></i> Back to Products
+        </a>
+    </div>
+</div>

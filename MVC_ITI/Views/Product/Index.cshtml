@@ -1,0 +1,31 @@
+﻿@model List<Product>
+
+<table class="table table-hover table-striped border shadow">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Description</td>
+                <td>
+                    <img src="~/Images/@item.Image"  class="rounded shadow" style="width: 60px; height: 60px;">
+                </td>
+                <td>
+                    <a href="/Product/Details/@item.Id" class="btn btn-info btn-sm text-white">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
